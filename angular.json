@@ -70,18 +70,18 @@
           },
           "defaultConfiguration": "production"
         },
-        "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
-          "configurations": {
-            "production": {
-              "buildTarget": "ecom:build:production"
-            },
-            "development": {
-              "buildTarget": "ecom:build:development"
-            }
-          },
-          "defaultConfiguration": "development"
-        },
+      "serve": {
+  "builder": "@angular-devkit/build-angular:server",
+  "configurations": {
+    "production": {
+      "buildTarget": "ecom:server:production"
+    },
+    "development": {
+      "buildTarget": "ecom:server:development"
+    }
+  },
+  "defaultConfiguration": "development"
+},
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n"
         },

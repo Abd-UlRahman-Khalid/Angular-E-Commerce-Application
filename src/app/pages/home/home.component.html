@@ -2,10 +2,16 @@
 <section
   class="bg-green-900 text-white flex items-center justify-center px-6 pt-5"
 >
-  <div class="flex w-full max-w-4xl items-center px-5 gap-8">
-    <div class="hero-info w-1/2">
-      <h1 class="text-3xl font-bold pb-5">Welcome To FreshCart</h1>
-      <p class="text-2xl">From Home to Fashion, FreshCart Has It All!</p>
+  <div
+    class="flex w-full max-w-4xl items-center px-5 gap-8 sm:flex-col lg:flex-row"
+  >
+    <div
+      class="hero-info lg:w-1/2 lg:pr-5 sm:w-2/3 sm:text-center lg:text-left"
+    >
+      <h1 class="text-5xl font-bold pb-5">Welcome To FreshCart</h1>
+      <p class="lg:text-3xl sm:text-2xl">
+        From Home to Fashion, FreshCart Has It All!
+      </p>
       <button
         (click)="scrollToSection()"
         class="bg-yellow-600 rounded-full text-white py-3 px-8 mt-5 font-bold"

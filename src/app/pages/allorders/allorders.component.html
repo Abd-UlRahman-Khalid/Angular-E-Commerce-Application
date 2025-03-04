@@ -1,1 +1,50 @@
-<p>allorders works!</p>
+<div class="py-10 bg-white">
+  @if(ownerId){
+
+  <section class="main-section w-[75%] mx-auto rounded-full">
+    <div class="flex justify-center">
+      <img src="/images/done.png" alt="" class="w-40 h-40" />
+    </div>
+    <h1 class="text-center text-3xl text-white p-5 font-bold">
+      Order placed successfully!
+    </h1>
+    <p class="text-center pb-10">
+      "Your trust means the world to us. Hope you love your order! 🌟"
+    </p>
+
+    <div class="pb-5">
+      @for (order of orders; track order.id) {
+      <div class="p-5 flex gap-3 bg-gray-800 rounded-3xl m-3 justify-between">
+        <div class="w-20 object-contain rounded-3xl overflow-hidden">
+          <img
+            [src]="order.cartItems[0].product.imageCover"
+            [alt]="order.cartItems[0].product.title"
+          />
+        </div>
+        <div class="whishinfo">
+          <div class="">
+            <h1 class="text-2xl font-bold">
+              {{ order.cartItems[0].product.title }}
+            </h1>
+            <span
+              class="rounded-full bg-yellow-600 py-1 px-2 my-2 inline-block"
+            >
+              <span class="font-bold">Price: </span>
+              {{ order.totalOrderPrice | currency : "GBP" }}
+            </span>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+  </section>
+
+  }@else {
+
+  <section class="flex flex-col justify-center items-center">
+    <img src="/images/empty-wishing-list.webp" alt="" />
+    <h1 class="text-xl text-gray-400 font-bold">Oops! Your List is Empty</h1>
+  </section>
+
+  }
+</div>

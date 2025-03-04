@@ -3,22 +3,42 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class OrdersService {
+  constructor(private httpClient: HttpClient) {}
+  myToken: any = localStorage.getItem('userToken');
 
-  constructor( private httpClient:HttpClient) { }
-  myToken:any=localStorage.getItem('userToken');
-
-  checkOutPayMent(id:string ,data:object):Observable<any>{
-    return this.httpClient.post(`https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${id}?url=http://localhost:4200`,
+  checkOutPayMent(id: string, data: object): Observable<any> {
+    return this.httpClient.post(
+      `https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${id}?url=http://localhost:4200`,
       {
-        "shippingAddress":data
-    },{
-      headers:{
-        token:this.myToken
+        shippingAddress: data,
+      },
+      {
+        headers: {
+          token: this.myToken,
+        },
       }
-    }
-    )
+    );
+  }
+  checkOutPayMentCash(id: string, data: object): Observable<any> {
+    return this.httpClient.post(
+      `https://ecommerce.routemisr.com/api/v1/orders/${id}?url=http://localhost:4200`,
+      {
+        shippingAddress: data,
+      },
+      {
+        headers: {
+          token: this.myToken,
+        },
+      }
+    );
+  }
+
+  getUsersOreder(id: string): Observable<any> {
+    return this.httpClient.get(
+      `https://ecommerce.routemisr.com/api/v1/orders/user/${id}`
+    );
   }
 }

@@ -83,6 +83,14 @@ export const routes: Routes = [
         title: 'allorders',
       },
       {
+        path: 'cashpayment',
+        loadComponent: () =>
+          import('./pages/cashpayment/cashpayment.component').then(
+            (m) => m.CashpaymentComponent
+          ),
+        title: 'cashpayment',
+      },
+      {
         path: 'brand',
         loadComponent: () =>
           import('./pages/brands/brands.component').then(

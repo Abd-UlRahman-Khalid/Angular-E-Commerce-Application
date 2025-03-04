@@ -1,47 +1,62 @@
-<section class="main-section w-1/2 mx-auto">
-  <h1 class="text-center text-green-600 text-3xl">Check Out</h1>
+<div class="py-10 bg-white">
+  <section class="container main-section w-1/2 mx-auto text-white">
+    <h1 class="text-center text-3xl text-white p-5 font-bold">Check Out</h1>
+    <p class="text-center pb-10">"Almost there! Complete your details. ✍️"</p>
 
-  <form [formGroup]="checkOutForm" (ngSubmit)="submentForm()">
-    <div class="mb-1">
-      <label for="details" class="block mb-2 text-sm font-medium text-gray-900"
-        >details</label
-      >
-      <textarea
-        formControlName="details"
-        id="details"
-        class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-      ></textarea>
-    </div>
+    <form [formGroup]="checkOutForm" (ngSubmit)="submentForm()">
+      <div class="mb-1">
+        <label for="phone" class="block mb-2 text-sm font-medium">Phone</label>
+        <input
+          formControlName="phone"
+          placeholder="eg: 015-55623489"
+          type="tel"
+          id="phone"
+          class="bg-white border border-gray-300 text-gray-900 placeholder:text-gray-300 text-sm rounded-full focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+        />
+      </div>
 
-    <div class="mb-1">
-      <label for="phone" class="block mb-2 text-sm font-medium text-gray-900"
-        >phone</label
-      >
-      <input
-        formControlName="phone"
-        type="tel"
-        id="phone"
-        class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-      />
-    </div>
+      <div class="mb-3">
+        <label for="city" class="block mb-2 text-sm font-medium">Address</label>
+        <input
+          formControlName="city"
+          placeholder=" cairo , 6th October... "
+          type="text"
+          id="city"
+          class="bg-white border border-gray-300 text-gray-900 text-sm placeholder:text-gray-300 rounded-full focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+        />
+      </div>
 
-    <div class="mb-1">
-      <label for="city" class="block mb-2 text-sm font-medium text-gray-900"
-        >city</label
-      >
-      <input
-        formControlName="city"
-        type="text"
-        id="city"
-        class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-      />
-    </div>
+      <div class="mb-1">
+        <label for="details" class="block mb-2 text-sm font-medium"
+          >Comment</label
+        >
+        <textarea
+          formControlName="details"
+          id="details"
+          placeholder="Do Not Knock The Door"
+          class="bg-white border border-gray-300 text-gray-900 placeholder:text-gray-300 text-sm rounded-xl focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+        ></textarea>
+      </div>
 
-    <button [disabled]="checkOutForm.invalid" class="btn-main" type="submit">
-      Online Payment
-    </button>
-    <button [disabled]="checkOutForm.invalid" class="btn-main" type="submit">
-      Cash Payment
-    </button>
-  </form>
-</section>
+      <div class="flex flex-col">
+        <button
+          [disabled]="checkOutForm.invalid"
+          class="disabled:bg-gray-700 text-white px-12 py-2 rounded-full hover:bg-blue-800 transition-colors duration-500 mt-5 bg-blue-600"
+          type="submit"
+        >
+          <i class="fa-brands fa-cc-visa pr-1"></i>
+          <i class="fa-brands fa-cc-mastercard pr-1"></i>
+          Online Payment
+        </button>
+        <button
+          [disabled]="checkOutForm.invalid"
+          class="disabled:bg-gray-700 bg-blue-600 text-white px-12 py-2 rounded-full hover:bg-blue-800 transition-colors duration-500 mt-5"
+          type="submit"
+        >
+          <i class="fa-solid fa-money-bill-wave pr-1"></i>
+          Cash Payment
+        </button>
+      </div>
+    </form>
+  </section>
+</div>

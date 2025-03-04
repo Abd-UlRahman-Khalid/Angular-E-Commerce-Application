@@ -24,7 +24,7 @@ export class OrdersService {
   }
   checkOutPayMentCash(id: string, data: object): Observable<any> {
     return this.httpClient.post(
-      `https://ecommerce.routemisr.com/api/v1/orders/${id}?url=http://localhost:4200`,
+      `https://ecommerce.routemisr.com/api/v1/orders/${id}?url=https://angular-e-commerce-application-sf99.vercel.app`,
       {
         shippingAddress: data,
       },

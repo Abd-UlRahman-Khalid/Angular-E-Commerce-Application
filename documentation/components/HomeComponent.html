@@ -1,0 +1,1381 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>ecom documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">ecom documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  HomeComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/pages/home/home.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-home</code></td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>CarouselModule</code>
+                            <code>UpperCasePipe</code>
+                            <code>TitleCasePipe</code>
+                            <code>SlicePipe</code>
+                            <code>CurrencyPipe</code>
+                            <code>SearchPipe</code>
+                            <code>FormsModule</code>
+                            <code>RouterLink</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./home.component.html</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrl</td>
+                <td class="col-md-9"><code>./home.component.scss</code></td>
+            </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#cartService" >cartService</a>
+                            </li>
+                            <li>
+                                <a href="#categories" >categories</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#categoriesService" >categoriesService</a>
+                            </li>
+                            <li>
+                                <a href="#customMainSlider" >customMainSlider</a>
+                            </li>
+                            <li>
+                                <a href="#customOptions" >customOptions</a>
+                            </li>
+                            <li>
+                                <a href="#hamada" >hamada</a>
+                            </li>
+                            <li>
+                                <a href="#myDate" >myDate</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#ngxSpinnerService" >ngxSpinnerService</a>
+                            </li>
+                            <li>
+                                <a href="#products" >products</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#productsService" >productsService</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#toastrService" >toastrService</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#whishingService" >whishingService</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#addToCard" >addToCard</a>
+                            </li>
+                            <li>
+                                <a href="#addToWhishing" >addToWhishing</a>
+                            </li>
+                            <li>
+                                <a href="#getCategoriesData" >getCategoriesData</a>
+                            </li>
+                            <li>
+                                <a href="#getProductsData" >getProductsData</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#scrollToSection" >scrollToSection</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addToCard"></a>
+                    <span class="name">
+                        <span ><b>addToCard</b></span>
+                        <a href="#addToCard"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>addToCard(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="125"
+                                    class="link-to-prism">src/app/pages/home/home.component.ts:125</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addToWhishing"></a>
+                    <span class="name">
+                        <span ><b>addToWhishing</b></span>
+                        <a href="#addToWhishing"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>addToWhishing(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="146"
+                                    class="link-to-prism">src/app/pages/home/home.component.ts:146</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getCategoriesData"></a>
+                    <span class="name">
+                        <span ><b>getCategoriesData</b></span>
+                        <a href="#getCategoriesData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getCategoriesData()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="110"
+                                    class="link-to-prism">src/app/pages/home/home.component.ts:110</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getProductsData"></a>
+                    <span class="name">
+                        <span ><b>getProductsData</b></span>
+                        <a href="#getProductsData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getProductsData()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="99"
+                                    class="link-to-prism">src/app/pages/home/home.component.ts:99</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="94"
+                                    class="link-to-prism">src/app/pages/home/home.component.ts:94</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="scrollToSection"></a>
+                    <span class="name">
+                        <span ><b>scrollToSection</b></span>
+                        <a href="#scrollToSection"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>scrollToSection()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="139"
+                                    class="link-to-prism">src/app/pages/home/home.component.ts:139</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cartService"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Readonly</span>
+                        <span ><b>cartService</b></span>
+                        <a href="#cartService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(CartService)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/pages/home/home.component.ts:45</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="categories"></a>
+                    <span class="name">
+                        <span ><b>categories</b></span>
+                        <a href="#categories"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/ICategories.html" target="_self" >ICategories[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">src/app/pages/home/home.component.ts:54</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="categoriesService"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Readonly</span>
+                        <span ><b>categoriesService</b></span>
+                        <a href="#categoriesService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(CategoriesService)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/pages/home/home.component.ts:44</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="customMainSlider"></a>
+                    <span class="name">
+                        <span ><b>customMainSlider</b></span>
+                        <a href="#customMainSlider"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>OwlOptions</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    loop: true,
+    mouseDrag: false,
+    touchDrag: false,
+    pullDrag: false,
+    dots: false,
+    navSpeed: 700,
+    navText: [&#x27;&#x27;, &#x27;&#x27;],
+    items: 1,
+    nav: true,
+  }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">src/app/pages/home/home.component.ts:56</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="customOptions"></a>
+                    <span class="name">
+                        <span ><b>customOptions</b></span>
+                        <a href="#customOptions"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>OwlOptions</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    loop: false,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: false,
+    dots: false,
+    autoplay: true,
+    autoplayHoverPause: true,
+    navSpeed: 700,
+    navText: [&#x27;&#x27;, &#x27;&#x27;],
+    responsive: {
+      0: {
+        items: 1,
+      },
+      400: {
+        items: 2,
+      },
+      740: {
+        items: 3,
+      },
+      940: {
+        items: 4,
+      },
+    },
+    nav: true,
+  }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="67" class="link-to-prism">src/app/pages/home/home.component.ts:67</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="hamada"></a>
+                    <span class="name">
+                        <span ><b>hamada</b></span>
+                        <a href="#hamada"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/app/pages/home/home.component.ts:50</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="myDate"></a>
+                    <span class="name">
+                        <span ><b>myDate</b></span>
+                        <a href="#myDate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Date()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/pages/home/home.component.ts:51</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngxSpinnerService"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Readonly</span>
+                        <span ><b>ngxSpinnerService</b></span>
+                        <a href="#ngxSpinnerService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(NgxSpinnerService)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/pages/home/home.component.ts:47</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="products"></a>
+                    <span class="name">
+                        <span ><b>products</b></span>
+                        <a href="#products"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>IProduct[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/app/pages/home/home.component.ts:53</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="productsService"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Readonly</span>
+                        <span ><b>productsService</b></span>
+                        <a href="#productsService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(ProductsService)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/pages/home/home.component.ts:43</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toastrService"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Readonly</span>
+                        <span ><b>toastrService</b></span>
+                        <a href="#toastrService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(ToastrService)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/pages/home/home.component.ts:46</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="whishingService"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Readonly</span>
+                        <span ><b>whishingService</b></span>
+                        <a href="#whishingService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(WhishingService)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/pages/home/home.component.ts:48</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, inject, OnInit } from &#x27;@angular/core&#x27;;
+import { ProductsService } from &#x27;../../core/services/products/products.service&#x27;;
+import { IProduct } from &#x27;../../shared/interfaces/iproduct&#x27;;
+
+import { CategoriesService } from &#x27;../../core/services/categories/categories.service&#x27;;
+import { CarouselModule, OwlOptions } from &#x27;ngx-owl-carousel-o&#x27;;
+import { ICategories } from &#x27;../../shared/interfaces/icategories&#x27;;
+import {
+  CurrencyPipe,
+  DatePipe,
+  JsonPipe,
+  SlicePipe,
+  TitleCasePipe,
+  UpperCasePipe,
+} from &#x27;@angular/common&#x27;;
+import { SearchPipe } from &#x27;../../shared/pipes/search/search.pipe&#x27;;
+import { FormsModule } from &#x27;@angular/forms&#x27;;
+import { RouterLink } from &#x27;@angular/router&#x27;;
+import { CartService } from &#x27;../../core/services/cart/cart.service&#x27;;
+import { error } from &#x27;console&#x27;;
+import { ToastrService } from &#x27;ngx-toastr&#x27;;
+import { NgxSpinnerService } from &#x27;ngx-spinner&#x27;;
+import { finalize } from &#x27;rxjs&#x27;;
+import { WhishingService } from &#x27;../../core/services/whishing/whishing.service&#x27;;
+
+@Component({
+  selector: &#x27;app-home&#x27;,
+  imports: [
+    CarouselModule,
+    UpperCasePipe,
+    TitleCasePipe,
+    SlicePipe,
+    CurrencyPipe,
+
+    SearchPipe,
+    FormsModule,
+    RouterLink,
+  ],
+  templateUrl: &#x27;./home.component.html&#x27;,
+  styleUrl: &#x27;./home.component.scss&#x27;,
+})
+export class HomeComponent implements OnInit {
+  private readonly productsService &#x3D; inject(ProductsService);
+  private readonly categoriesService &#x3D; inject(CategoriesService);
+  private readonly cartService &#x3D; inject(CartService);
+  private readonly toastrService &#x3D; inject(ToastrService);
+  private readonly ngxSpinnerService &#x3D; inject(NgxSpinnerService);
+  private readonly whishingService &#x3D; inject(WhishingService);
+
+  hamada: string &#x3D; &#x27;&#x27;;
+  myDate: any &#x3D; new Date();
+
+  products: IProduct[] &#x3D; [];
+  categories: ICategories[] &#x3D; [];
+
+  customMainSlider: OwlOptions &#x3D; {
+    loop: true,
+    mouseDrag: false,
+    touchDrag: false,
+    pullDrag: false,
+    dots: false,
+    navSpeed: 700,
+    navText: [&#x27;&#x27;, &#x27;&#x27;],
+    items: 1,
+    nav: true,
+  };
+  customOptions: OwlOptions &#x3D; {
+    loop: false,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: false,
+    dots: false,
+    autoplay: true,
+    autoplayHoverPause: true,
+    navSpeed: 700,
+    navText: [&#x27;&#x27;, &#x27;&#x27;],
+    responsive: {
+      0: {
+        items: 1,
+      },
+      400: {
+        items: 2,
+      },
+      740: {
+        items: 3,
+      },
+      940: {
+        items: 4,
+      },
+    },
+    nav: true,
+  };
+
+  ngOnInit(): void {
+    this.getProductsData();
+    this.getCategoriesData();
+  }
+
+  getProductsData() {
+    this.productsService.getAllProducts().subscribe({
+      next: (res) &#x3D;&gt; {
+        this.products &#x3D; res.data;
+      },
+      error: (err) &#x3D;&gt; {
+        console.error(&#x27;Error fetching products:&#x27;, err);
+      },
+    });
+  }
+
+  getCategoriesData() {
+    // showLoading
+
+    this.categoriesService.getAllCategories().subscribe({
+      next: (res) &#x3D;&gt; {
+        this.categories &#x3D; res.data;
+        // hideLoading
+      },
+      error: (err) &#x3D;&gt; {
+        console.log(err);
+        // hideLoading
+      },
+    });
+  }
+
+  addToCard(id: string): void {
+    this.cartService.addProductToCart(id).subscribe({
+      next: (res) &#x3D;&gt; {
+        console.log(res);
+        if (res.status &#x3D;&#x3D;&#x3D; &#x27;success&#x27;) {
+          this.toastrService.success(res.message, &#x27;FreshCart&#x27;);
+        }
+      },
+      error: (error) &#x3D;&gt; {
+        console.log(error);
+      },
+    });
+  }
+
+  scrollToSection() {
+    const element &#x3D; document.getElementById(&#x27;targetSection&#x27;);
+    if (element) {
+      window.scrollTo({ top: element.offsetTop, behavior: &#x27;smooth&#x27; });
+    }
+  }
+
+  addToWhishing(id: string): void {
+    this.whishingService.addProductToWhishingList(id).subscribe({
+      next: (res) &#x3D;&gt; {
+        console.log(res);
+        if (res.status &#x3D;&#x3D;&#x3D; &#x27;success&#x27;) {
+          this.toastrService.success(res.message, &#x27;FreshCart&#x27;);
+        }
+      },
+      error: (error) &#x3D;&gt; {
+        console.log(error);
+      },
+    });
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;!-- HERO SECTION --&gt;
+&lt;section
+  class&#x3D;&quot;bg-green-900 text-white flex items-center justify-center px-6 pt-5&quot;
+&gt;
+  &lt;div class&#x3D;&quot;flex w-full max-w-4xl items-center px-5 gap-8&quot;&gt;
+    &lt;div class&#x3D;&quot;hero-info w-1/2&quot;&gt;
+      &lt;h1 class&#x3D;&quot;text-3xl font-bold pb-5&quot;&gt;Welcome To FreshCart&lt;/h1&gt;
+      &lt;p class&#x3D;&quot;text-2xl&quot;&gt;From Home to Fashion, FreshCart Has It All!&lt;/p&gt;
+      &lt;button
+        (click)&#x3D;&quot;scrollToSection()&quot;
+        class&#x3D;&quot;bg-yellow-600 rounded-full text-white py-3 px-8 mt-5 font-bold&quot;
+      &gt;
+        Shop Now
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;w-1/2 flex justify-center&quot;&gt;
+      &lt;img src&#x3D;&quot;/images/model-3.png&quot; class&#x3D;&quot;max-w-full h-auto&quot; alt&#x3D;&quot;&quot; /&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+&lt;!-- fixed  --&gt;
+&lt;section class&#x3D;&quot;bg-green-900 text-white&quot;&gt;
+  &lt;div&gt;
+    &lt;owl-carousel-o [options]&#x3D;&quot;customMainSlider&quot;&gt;
+      &lt;ng-template carouselSlide&gt;
+        &lt;img src&#x3D;&quot;/images/img1.avif&quot; class&#x3D;&quot;w-full h-[300px]&quot; alt&#x3D;&quot;&quot; /&gt;
+      &lt;/ng-template&gt;
+      &lt;ng-template carouselSlide&gt;
+        &lt;img src&#x3D;&quot;/images/img2.avif&quot; class&#x3D;&quot;w-full h-[300px]&quot; alt&#x3D;&quot;&quot; /&gt;
+      &lt;/ng-template&gt;
+      &lt;ng-template carouselSlide&gt;
+        &lt;img src&#x3D;&quot;/images/img3.avif&quot; class&#x3D;&quot;w-full h-[300px]&quot; alt&#x3D;&quot;&quot; /&gt;
+      &lt;/ng-template&gt;
+      &lt;ng-template carouselSlide&gt;
+        &lt;img src&#x3D;&quot;/images/img4.avif&quot; class&#x3D;&quot;w-full h-[300px]&quot; alt&#x3D;&quot;&quot; /&gt;
+      &lt;/ng-template&gt;
+    &lt;/owl-carousel-o&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+&lt;!-- Dynamic --&gt;
+&lt;section class&#x3D;&quot;bg-green-900 text-white p-5&quot;&gt;
+  &lt;h1 class&#x3D;&quot;font-bold&quot;&gt;Popular Categories&lt;/h1&gt;
+
+  &lt;owl-carousel-o [options]&#x3D;&quot;customOptions&quot;&gt;
+    @for (cat of categories; track cat._id) {
+    &lt;ng-template carouselSlide&gt;
+      &lt;!-- Content --&gt;
+      &lt;div class&#x3D;&quot;flex flex-col justify-center items-center&quot;&gt;
+        &lt;div class&#x3D;&quot;rounded-full w-40 h-40 overflow-hidden my-5&quot;&gt;
+          &lt;img [src]&#x3D;&quot;cat.image&quot; class&#x3D;&quot;w-full h-[250px] object-cover&quot; alt&#x3D;&quot;&quot; /&gt;
+        &lt;/div&gt;
+        &lt;h3 class&#x3D;&quot;&quot;&gt;{{ cat.name | uppercase }}&lt;/h3&gt;
+      &lt;/div&gt;
+    &lt;/ng-template&gt;
+    }
+  &lt;/owl-carousel-o&gt;
+&lt;/section&gt;
+&lt;!-- ALl Product --&gt;
+&lt;div class&#x3D;&quot;bg-white py-10&quot; id&#x3D;&quot;targetSection&quot;&gt;
+  &lt;section class&#x3D;&quot;container pt-5&quot;&gt;
+    &lt;h2 class&#x3D;&quot;text-4xl text-green-600 font-bold&quot;&gt;Popular Product&lt;/h2&gt;
+    &lt;input
+      [(ngModel)]&#x3D;&quot;hamada&quot;
+      type&#x3D;&quot;email&quot;
+      placeholder&#x3D;&quot;Search ...&quot;
+      class&#x3D;&quot;my-5 bg-white border border-gray-300 text-gray-900 text-sm rounded-full placeholder-gray-400 cus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pb-5&quot;
+    /&gt;
+    &lt;div class&#x3D;&quot;grid sm: grid-cols-2 md:grod-cols-3 lg:grid-cols-4 gap-10&quot;&gt;
+      @for (prod of products.slice(0,12) | search : hamada ; track prod.id){
+      &lt;div
+        class&#x3D;&quot;card border border-green-400/50 rounded-3xl overflow-hidden shadow relative&quot;
+      &gt;
+        &lt;div [routerLink]&#x3D;&quot;[&#x27;/details&#x27;, prod.id]&quot;&gt;
+          &lt;div class&#x3D;&quot;card-img&quot;&gt;
+            &lt;img
+              [src]&#x3D;&quot;prod.imageCover&quot;
+              alt&#x3D;&quot;   &quot;
+              class&#x3D;&quot;w-full h-[250px] object-cover&quot;
+            /&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;card-body px-2 py-4&quot;&gt;
+            &lt;h4 class&#x3D;&quot;text-green-500 text-xs&quot;&gt;
+              {{ prod.category.name | slice : 0 : 5 }}
+            &lt;/h4&gt;
+            &lt;h3 class&#x3D;&quot;font-medium&quot;&gt;
+              {{ prod.title.split(&quot; &quot;, 2).join(&quot; &quot;) | titlecase }}
+            &lt;/h3&gt;
+            &lt;div class&#x3D;&quot;flex justify-between items-center&quot;&gt;
+              &lt;span&gt;{{ prod.price | currency : &quot;EUR&quot; }}&lt;/span&gt;
+              &lt;div class&#x3D;&quot;flex items-center&quot;&gt;
+                &lt;i class&#x3D;&quot;fas fa-star text-yellow-300&quot;&gt;&lt;/i&gt;
+                &lt;span class&#x3D;&quot;text-gray-500&quot;&gt;{{ prod.ratingsAverage }}&lt;/span&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;flex justify-center&quot;&gt;
+          &lt;button
+            class&#x3D;&quot;bg-green-600 text-white rounded-full py-2 px-10 mr-5 flex justify-center items-center&quot;
+            (click)&#x3D;&quot;addToCard(prod._id)&quot;
+          &gt;
+            &lt;i class&#x3D;&quot;fa-solid fa-cart-shopping&quot;&gt;&lt;/i&gt;
+          &lt;/button&gt;
+          &lt;button
+            class&#x3D;&quot;bg-green-600 rounded-full w-10 h-10 flex justify-center items-center&quot;
+            (click)&#x3D;&quot;addToWhishing(prod._id)&quot;
+          &gt;
+            &lt;i class&#x3D;&quot;fa-solid fa-heart text-white&quot;&gt;&lt;/i&gt;
+          &lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      }
+    &lt;/div&gt;
+  &lt;/section&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><!-- HERO SECTION --><section  class="bg-green-900 text-white flex items-center justify-center px-6 pt-5">  <div class="flex w-full max-w-4xl items-center px-5 gap-8">    <div class="hero-info w-1/2">      <h1 class="text-3xl font-bold pb-5">Welcome To FreshCart</h1>      <p class="text-2xl">From Home to Fashion, FreshCart Has It All!</p>      <button        (click)="scrollToSection()"        class="bg-yellow-600 rounded-full text-white py-3 px-8 mt-5 font-bold"      >        Shop Now      </button>    </div>    <div class="w-1/2 flex justify-center">      <img src="/images/model-3.png" class="max-w-full h-auto" alt="" />    </div>  </div></section><!-- fixed  --><section class="bg-green-900 text-white">  <div>    <owl-carousel-o [options]="customMainSlider">      <ng-template carouselSlide>        <img src="/images/img1.avif" class="w-full h-[300px]" alt="" />      </ng-template>      <ng-template carouselSlide>        <img src="/images/img2.avif" class="w-full h-[300px]" alt="" />      </ng-template>      <ng-template carouselSlide>        <img src="/images/img3.avif" class="w-full h-[300px]" alt="" />      </ng-template>      <ng-template carouselSlide>        <img src="/images/img4.avif" class="w-full h-[300px]" alt="" />      </ng-template>    </owl-carousel-o>  </div></section><!-- Dynamic --><section class="bg-green-900 text-white p-5">  <h1 class="font-bold">Popular Categories</h1>  <owl-carousel-o [options]="customOptions">    @for (cat of categories; track cat._id) {    <ng-template carouselSlide>      <!-- Content -->      <div class="flex flex-col justify-center items-center">        <div class="rounded-full w-40 h-40 overflow-hidden my-5">          <img [src]="cat.image" class="w-full h-[250px] object-cover" alt="" />        </div>        <h3 class="">{{ cat.name | uppercase }}</h3>      </div>    </ng-template>    }  </owl-carousel-o></section><!-- ALl Product --><div class="bg-white py-10" id="targetSection">  <section class="container pt-5">    <h2 class="text-4xl text-green-600 font-bold">Popular Product</h2>    <input      [(ngModel)]="hamada"      type="email"      placeholder="Search ..."      class="my-5 bg-white border border-gray-300 text-gray-900 text-sm rounded-full placeholder-gray-400 cus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pb-5"    />    <div class="grid sm: grid-cols-2 md:grod-cols-3 lg:grid-cols-4 gap-10">      @for (prod of products.slice(0,12) | search : hamada ; track prod.id){      <div        class="card border border-green-400/50 rounded-3xl overflow-hidden shadow relative"      >        <div [routerLink]="[\'/details\', prod.id]">          <div class="card-img">            <img              [src]="prod.imageCover"              alt="   "              class="w-full h-[250px] object-cover"            />          </div>          <div class="card-body px-2 py-4">            <h4 class="text-green-500 text-xs">              {{ prod.category.name | slice : 0 : 5 }}            </h4>            <h3 class="font-medium">              {{ prod.title.split(" ", 2).join(" ") | titlecase }}            </h3>            <div class="flex justify-between items-center">              <span>{{ prod.price | currency : "EUR" }}</span>              <div class="flex items-center">                <i class="fas fa-star text-yellow-300"></i>                <span class="text-gray-500">{{ prod.ratingsAverage }}</span>              </div>            </div>          </div>        </div>        <div class="flex justify-center">          <button            class="bg-green-600 text-white rounded-full py-2 px-10 mr-5 flex justify-center items-center"            (click)="addToCard(prod._id)"          >            <i class="fa-solid fa-cart-shopping"></i>          </button>          <button            class="bg-green-600 rounded-full w-10 h-10 flex justify-center items-center"            (click)="addToWhishing(prod._id)"          >            <i class="fa-solid fa-heart text-white"></i>          </button>        </div>      </div>      }    </div>  </section></div></div>'
+    var COMPONENTS = [{'name': 'AllordersComponent', 'selector': 'app-allorders'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthLayoutComponent', 'selector': 'app-auth-layout'},{'name': 'BlankLayoutComponent', 'selector': 'app-blank-layout'},{'name': 'BrandsComponent', 'selector': 'app-brands'},{'name': 'CartComponent', 'selector': 'app-cart'},{'name': 'CategoriesComponent', 'selector': 'app-categories'},{'name': 'CheckoutComponent', 'selector': 'app-checkout'},{'name': 'DetailsComponent', 'selector': 'app-details'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgetpasswordComponent', 'selector': 'app-forgetpassword'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NotfoundComponent', 'selector': 'app-notfound'},{'name': 'ProductComponent', 'selector': 'app-product'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'WhishlistComponent', 'selector': 'app-whishlist'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'HomeComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'HomeComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

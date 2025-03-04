@@ -51,7 +51,7 @@ export class WhishlistComponent implements OnInit {
     this.whishingService.deleteItemFromWhishingList(id).subscribe({
       next: (res) => {
         console.log(res);
-        this.whishItems = res;
+        this.getWhishingItems();
       },
       error: (error) => {
         console.log(error);

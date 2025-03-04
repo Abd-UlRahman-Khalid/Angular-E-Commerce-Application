@@ -52,6 +52,7 @@
           [disabled]="checkOutForm.invalid"
           class="disabled:bg-gray-700 bg-blue-600 text-white px-12 py-2 rounded-full hover:bg-blue-800 transition-colors duration-500 mt-5"
           type="submit"
+          (click)="cash = true"
         >
           <i class="fa-solid fa-money-bill-wave pr-1"></i>
           Cash Payment

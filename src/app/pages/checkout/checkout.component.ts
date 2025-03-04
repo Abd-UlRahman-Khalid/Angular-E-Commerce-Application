@@ -24,7 +24,7 @@ export class CheckoutComponent implements OnInit {
 
   checkOutForm!: FormGroup;
   cartId: string = '';
-  online: boolean = false;
+  cash: boolean = false;
 
   ngOnInit(): void {
     this.initForm();
@@ -53,7 +53,7 @@ export class CheckoutComponent implements OnInit {
   }
 
   submentForm(): void {
-    if (false) {
+    if (this.cash === false) {
       this.ordersService
         .checkOutPayMent(this.cartId, this.checkOutForm.value)
         .subscribe({

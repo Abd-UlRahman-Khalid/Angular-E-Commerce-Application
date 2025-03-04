@@ -1,11 +1,19 @@
 {
-    "routes":[
-        {
-            "src":"/",
-            "dest":"/"
-        },{
-            "src": "categories",
-            "dest":"/"
-        }
+    "version": 2,
+    "builds": [
+      {
+        "src": "server.ts",
+        "use": "@vercel/node"
+      },
+      {
+        "src": "dist/ecom/**/*",
+        "use": "@vercel/static"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "server.js"
+      }
     ]
-}
+  }

@@ -12,7 +12,7 @@ import { ICategories } from '../../shared/interfaces/icategories';
 
 @Component({
   selector: 'app-categories',
-  imports: [RouterLink, SearchPipe, FormsModule],
+  imports: [FormsModule],
   templateUrl: './categories.component.html',
   styleUrl: './categories.component.scss',
 })

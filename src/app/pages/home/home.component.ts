@@ -31,8 +31,7 @@ import { WhishingService } from '../../core/services/whishing/whishing.service';
     TitleCasePipe,
     SlicePipe,
     CurrencyPipe,
-    DatePipe,
-    JsonPipe,
+
     SearchPipe,
     FormsModule,
     RouterLink,

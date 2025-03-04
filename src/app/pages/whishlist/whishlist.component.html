@@ -1,0 +1,51 @@
+<div class="py-10">
+  @if(whishItems.count){
+
+  <section class="main-section w-[75%] mx-auto rounded-full">
+    <h1 class="text-center text-3xl text-white p-5 font-bold">Whishing List</h1>
+    <p class="text-center pb-10">
+      "Dream it. Wish it. Get it. Your perfect picks, all in one place!"
+    </p>
+
+    @for (item of whishItems.data; track item._id) {
+    <div class="p-5 flex gap-3 bg-gray-800 rounded-3xl m-3">
+      <div class="w-1/4 object-contain rounded-3xl overflow-hidden">
+        <img [src]="item.imageCover" [alt]="item.title" />
+      </div>
+      <div class="whishinfo w-3/4 flex justify-between">
+        <div class="w-2/4">
+          <h1 class="text-2xl font-bold">{{ item.title }}</h1>
+          <span class="rounded-full bg-yellow-600 py-1 px-2 my-2 inline-block">
+            <span class="font-bold">Price: </span>
+            {{ item.price | currency : "GBP" }}
+          </span>
+          <p>{{ item.description }}</p>
+        </div>
+        <div class="flex flex-col items-center justify-center">
+          <button
+            class="bg-green-600 p-5 mb-3 rounded-full"
+            (click)="addToCard(item._id)"
+          >
+            Add to Cart
+          </button>
+          <button
+            class="bg-red-800 p-5 rounded-full"
+            (click)="deleteItem(item._id)"
+          >
+            Delete Item
+          </button>
+        </div>
+      </div>
+    </div>
+    }
+  </section>
+
+  }@else {
+
+  <section class="flex flex-col justify-center items-center">
+    <img src="/images/empty-wishing-list.webp" alt="" />
+    <h1 class="text-xl text-gray-400 font-bold">Oops! Your List is Empty</h1>
+  </section>
+
+  }
+</div>

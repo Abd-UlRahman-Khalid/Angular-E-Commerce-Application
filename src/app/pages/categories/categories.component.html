@@ -1,0 +1,30 @@
+<div class="bg-white py-10">
+  <section class="container">
+    <div class="grid sm: grid-cols-2 lg:grid-cols-3 gap-10">
+      @for (cat of categories ; track cat._id){
+      <div
+        class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 hover:shadow-lg hover:shadow-green-600/50 transition-shadow duration-300 ease-in-out"
+      >
+        <div class="cart-img">
+          <a href="#">
+            <img
+              class="rounded-t-lg img-fluid ratio-4x3 w-100 h-[300px] w-full object-cover"
+              [src]="cat.image"
+              alt="Category's Image"
+            />
+          </a>
+        </div>
+        <div class="p-5">
+          <a href="#">
+            <h5
+              class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+            >
+              {{ cat.name }}
+            </h5>
+          </a>
+        </div>
+      </div>
+      }
+    </div>
+  </section>
+</div>

@@ -1,0 +1,57 @@
+<div class="bg-white py-10" id="targetSection">
+  <section class="container pt-5">
+    <h2 class="text-4xl text-green-600 font-bold">Popular Product</h2>
+    <input
+      [(ngModel)]="hamada"
+      type="email"
+      placeholder="Search ..."
+      class="my-5 bg-white border border-gray-300 text-gray-900 text-sm rounded-full placeholder-gray-400 cus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pb-5"
+    />
+    <div class="grid sm: grid-cols-2 md:grod-cols-3 lg:grid-cols-4 gap-10">
+      @for (prod of products.slice(0,12) | search : hamada ; track prod.id){
+      <div
+        class="card border border-green-400/50 rounded-3xl overflow-hidden shadow relative"
+      >
+        <div [routerLink]="['/details', prod.id]">
+          <div class="card-img">
+            <img
+              [src]="prod.imageCover"
+              alt="   "
+              class="w-full h-[250px] object-cover"
+            />
+          </div>
+          <div class="card-body px-2 py-4">
+            <h4 class="text-green-500 text-xs">
+              {{ prod.category.name | slice : 0 : 5 }}
+            </h4>
+            <h3 class="font-medium">
+              {{ prod.title.split(" ", 2).join(" ") | titlecase }}
+            </h3>
+            <div class="flex justify-between items-center">
+              <span>{{ prod.price | currency : "EUR" }}</span>
+              <div class="flex items-center">
+                <i class="fas fa-star text-yellow-300"></i>
+                <span class="text-gray-500">{{ prod.ratingsAverage }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-center">
+          <button
+            class="bg-green-600 text-white rounded-full py-2 px-10 mr-5 flex justify-center items-center"
+            (click)="addToCard(prod._id)"
+          >
+            <i class="fa-solid fa-cart-shopping"></i>
+          </button>
+          <button
+            class="bg-green-600 rounded-full w-10 h-10 flex justify-center items-center"
+            (click)="addToWhishing(prod._id)"
+          >
+            <i class="fa-solid fa-heart text-white"></i>
+          </button>
+        </div>
+      </div>
+      }
+    </div>
+  </section>
+</div>

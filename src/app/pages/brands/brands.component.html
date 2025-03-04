@@ -1,0 +1,28 @@
+<div class="bg-white py-10">
+  <section class="container">
+    <div class="grid sm: grid-cols-2 lg:grid-cols-3 gap-10">
+      @for (brand of brands; track brand._id) {
+      <div
+        class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 hover:shadow-lg hover:shadow-green-600/50 transition-shadow duration-300 ease-in-out"
+        (click)="getBranDetails(brand._id)"
+      >
+        <div class="cart-img">
+          <img
+            class="rounded-t-lg img-fluid ratio-4x3 w-100 h-[300px] w-full object-cover"
+            [src]="brand.image"
+            alt="Category's Image"
+          />
+        </div>
+        <div class="p-5">
+          <h5
+            class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+          >
+            {{ brand.name }}
+          </h5>
+        </div>
+      </div>
+
+      }
+    </div>
+  </section>
+</div>

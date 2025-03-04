@@ -74,7 +74,7 @@ export class CheckoutComponent implements OnInit {
         .subscribe({
           next: (res) => {
             console.log(res);
-            this.router.navigate(['/allorders']);
+            this.router.navigate(['/cashpayment']);
           },
           error: (error) => {
             console.log(error);

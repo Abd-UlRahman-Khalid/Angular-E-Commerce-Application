@@ -1,157 +1,59 @@
-ECOM - E-Commerce Application
+# Ecom
 
-📌 Project Overview
+This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.6.
 
-This is an Angular-based e-commerce application that provides a structured and modular approach to managing products, orders, authentication, and layouts. The project is organized into core modules for services, layouts, pages, and shared utilities, ensuring scalability and maintainability.
+## Development server
 
-📂 Project Structure
+To start a local development server, run:
 
-ECOM/
-├── public/
-│ ├── favicon.ico
-│
-├── src/
-│ ├── app/
-│ │ ├── core/
-│ │ │ ├── environments/
-│ │ │ ├── guards/
-│ │ │ ├── interceptors/
-│ │ │ ├── services/
-│ │ │ │ ├── auth/
-│ │ │ │ ├── brands/
-│ │ │ │ ├── cart/
-│ │ │ │ ├── categories/
-│ │ │ │ ├── flowbite/
-│ │ │ │ ├── orders/
-│ │ │ │ ├── products/
-│ │ │ │ ├── whishing/
-│ │ │
-│ │ ├── layout/
-│ │ │ ├── auth-layout/
-│ │ │ ├── blank-layout/
-│ │ │ ├── footer/
-│ │ │ ├── navbar/
-│ │ │
-│ │ ├── pages/
-│ │ │ ├── allorders/
-│ │ │ ├── brands/
-│ │ │ ├── cart/
-│ │ │ ├── categories/
-│ │ │ ├── checkout/
-│ │ │ ├── details/
-│ │ │ ├── forgetpassword/
-│ │ │ ├── home/
-│ │ │ ├── login/
-│ │ │ ├── notfound/
-│ │ │ ├── product/
-│ │ │ ├── register/
-│ │ │ ├── whishlist/
-│ │ │
-│ │ ├── shared/
-│ │ │ ├── components/
-│ │ │ ├── directives/
-│ │ │ ├── interfaces/
-│ │ │ │ ├── ibrands.ts
-│ │ │ │ ├── icart.ts
-│ │ │ │ ├── icategories.ts
-│ │ │ │ ├── iproduct.ts
-│ │ │ │ ├── iwhish.ts
-│ │ │ ├── pipes/
-│ │ │
-│ │ ├── app.component.ts
-│ │ ├── app.config.ts
-│ │ ├── app.config.server.ts
-│ │ ├── app.routes.ts
-│ │ ├── app.routes.server.ts
-│
-├── server.ts
-├── main.ts
-├── main.server.ts
-├── styles.scss
-├── tailwind.config.js
-├── angular.json
-├── package.json
-├── package-lock.json
-├── tsconfig.json
-├── tsconfig.app.json
-├── tsconfig.spec.json
-├── .editorconfig
-├── .gitignore
-├── README.md
-
-🚀 Features
-
-Authentication: Secure user authentication with guards and interceptors.
-
-Product Management: Categories, brands, and product listings.
-
-Cart Functionality: Add to cart, update cart, and checkout process.
-
-Order Management: View all orders and order details.
-
-User Management: Login, registration, and password recovery.
-
-Layouts: Multiple layout components for authentication, navigation, and blank pages.
-
-Flowbite Integration: UI components for enhanced user experience.
-
-Shared Utilities: Interfaces, components, directives, and pipes for reusability.
-
-404 Handling: A dedicated notfound page for better user experience.
-
-🔧 Installation
-
-Clone the repository:
-
-git clone https://github.com/your-repo/ecom.git
-cd ecom
-
-Install dependencies:
-
-npm install
-
-Run the development server:
-
+```bash
 ng serve
+```
 
-Open in browser: http://localhost:4200
+Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-📜 Scripts
+## Code scaffolding
 
-ng serve - Runs the application in development mode.
+Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
 
-ng build - Builds the application for production.
+```bash
+ng generate component component-name
+```
 
-ng test - Runs unit tests.
+For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
 
-ng lint - Lints the project files.
+```bash
+ng generate --help
+```
 
-📌 Technologies Used
+## Building
 
-Angular - Frontend framework
+To build the project run:
 
-TypeScript - Primary programming language
+```bash
+ng build
+```
 
-RxJS - Reactive programming
+This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
 
-Bootstrap/Flowbite - UI Components
+## Running unit tests
 
-Tailwind CSS - Styling framework
+To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
 
-🛠️ Contribution
+```bash
+ng test
+```
 
-Contributions are welcome! To contribute:
+## Running end-to-end tests
 
-Fork the repository
+For end-to-end (e2e) testing, run:
 
-Create a new branch (feature/your-feature)
+```bash
+ng e2e
+```
 
-Commit your changes
+Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
 
-Push to the branch
+## Additional Resources
 
-Create a pull request
-
-📞 Contact
-
-For any inquiries, feel free to reach out to a.khalid5322@gmail.com .
+For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.

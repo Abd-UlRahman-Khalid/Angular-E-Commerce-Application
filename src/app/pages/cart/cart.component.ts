@@ -15,10 +15,13 @@ import Swal from 'sweetalert2';
 export class CartComponent implements OnInit {
   private readonly cartService = inject(CartService);
 
+  ownerId: string = '';
+
   cardDetails: ICart = {} as ICart;
 
   ngOnInit(): void {
     this.getCartData();
+    this.getOwnerID();
   }
 
   getCartData(): void {
@@ -99,6 +102,19 @@ export class CartComponent implements OnInit {
         console.log(res);
         // getCartData
         this.cardDetails = res.data;
+      },
+      error: (error) => {
+        console.log(error);
+      },
+    });
+  }
+
+  getOwnerID(): void {
+    this.cartService.getLoggedUserCart().subscribe({
+      next: (res) => {
+        console.log(res);
+        this.ownerId = res.data.cartOwner;
+        this.cartService.setOwnerId(this.ownerId);
       },
       error: (error) => {
         console.log(error);

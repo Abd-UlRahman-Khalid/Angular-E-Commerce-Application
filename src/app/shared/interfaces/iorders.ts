@@ -1,22 +1,4 @@
 export interface IOrders {
-  shippingAddress: ShippingAddress;
-  taxPrice: number;
-  shippingPrice: number;
-  totalOrderPrice: number;
-  paymentMethodType: string;
-  isPaid: boolean;
-  isDelivered: boolean;
-  _id: string;
-  user: User;
-  cartItems: CartItem[];
-  paidAt: string;
-  createdAt: string;
-  updatedAt: string;
-  id: number;
-  __v: number;
-}
-
-export interface CartItem {
   count: number;
   _id: string;
   product: Product;
@@ -47,17 +29,4 @@ export interface Subcategory {
   name: string;
   slug: string;
   category: string;
-}
-
-export interface User {
-  _id: string;
-  name: string;
-  email: string;
-  phone: string;
-}
-
-export interface ShippingAddress {
-  details: string;
-  phone: string;
-  city: string;
 }

@@ -1,5 +1,5 @@
 <div class="py-10 bg-white">
-  @if(ownerId){
+  @if(orders){
 
   <section class="main-section w-[75%] mx-auto rounded-full">
     <div class="flex justify-center">
@@ -13,28 +13,24 @@
     </p>
 
     <div class="pb-5">
-      @for (order of orders; track order.id) {
-      <div class="p-5 flex gap-3 bg-gray-800 rounded-3xl m-3 justify-between">
-        <div class="w-20 object-contain rounded-3xl overflow-hidden">
-          <img
-            [src]="order.cartItems[0].product.imageCover"
-            [alt]="order.cartItems[0].product.title"
-          />
-        </div>
-        <div class="whishinfo">
-          <div class="">
-            <h1 class="text-2xl font-bold">
-              {{ order.cartItems[0].product.title }}
-            </h1>
-            <span
-              class="rounded-full bg-yellow-600 py-1 px-2 my-2 inline-block"
-            >
-              <span class="font-bold">Price: </span>
-              {{ order.totalOrderPrice | currency : "GBP" }}
-            </span>
+      @for (order of orders; track order._id) {
+      <div>
+        <div
+          class="p-5 flex gap-3 bg-gray-800 rounded-3xl m-3 justify-between border-b"
+        >
+          <div class="w-20 object-contain rounded-3xl overflow-hidden">
+            <img [src]="order.product.imageCover" [alt]="order.product.title" />
+          </div>
+          <div class="whishinfo">
+            <div class="">
+              <h1 class="text-2xl font-bold">
+                {{ order.product.title }}
+              </h1>
+            </div>
           </div>
         </div>
       </div>
+
       }
     </div>
   </section>

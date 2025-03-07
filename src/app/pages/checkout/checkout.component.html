@@ -4,44 +4,51 @@
     <p class="text-center pb-10">"Almost there! Complete your details. ✍️"</p>
 
     <form [formGroup]="checkOutForm" (ngSubmit)="submentForm()">
-      <div class="mb-1">
-        <label for="phone" class="block mb-2 text-sm font-medium">Phone</label>
-        <input
-          formControlName="phone"
-          placeholder="eg: 015-55623489"
-          type="tel"
-          id="phone"
-          class="bg-white border border-gray-300 text-gray-900 placeholder:text-gray-300 text-sm rounded-full focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-        />
-      </div>
+      <h3 class="text-lg font-bold pb-5">Shipping Address</h3>
+      <div class="pb-5 text-gray-400">
+        <div class="mb-1">
+          <label for="phone" class="block mb-2 text-sm font-medium"
+            >Phone</label
+          >
+          <input
+            formControlName="phone"
+            placeholder="eg: 015-55623489"
+            type="tel"
+            id="phone"
+            class="bg-white border border-gray-300 text-gray-900 placeholder:text-gray-300 text-sm rounded-full focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+          />
+        </div>
 
-      <div class="mb-3">
-        <label for="city" class="block mb-2 text-sm font-medium">Address</label>
-        <input
-          formControlName="city"
-          placeholder=" cairo , 6th October... "
-          type="text"
-          id="city"
-          class="bg-white border border-gray-300 text-gray-900 text-sm placeholder:text-gray-300 rounded-full focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-        />
-      </div>
+        <div class="mb-3">
+          <label for="city" class="block mb-2 text-sm font-medium"
+            >Address</label
+          >
+          <input
+            formControlName="city"
+            placeholder=" cairo , 6th October... "
+            type="text"
+            id="city"
+            class="bg-white border border-gray-300 text-gray-900 text-sm placeholder:text-gray-300 rounded-full focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+          />
+        </div>
 
-      <div class="mb-1">
-        <label for="details" class="block mb-2 text-sm font-medium"
-          >Comment</label
-        >
-        <textarea
-          formControlName="details"
-          id="details"
-          placeholder="Do Not Knock The Door"
-          class="bg-white border border-gray-300 text-gray-900 placeholder:text-gray-300 text-sm rounded-xl focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-        ></textarea>
+        <div class="mb-1">
+          <label for="details" class="block mb-2 text-sm font-medium"
+            >Details</label
+          >
+          <textarea
+            formControlName="details"
+            id="details"
+            placeholder="Do Not Knock The Door"
+            class="bg-white border border-gray-300 text-gray-900 placeholder:text-gray-300 text-sm rounded-xl focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+          ></textarea>
+        </div>
       </div>
 
       <div class="flex flex-col">
         <button
           [disabled]="checkOutForm.invalid"
-          class="disabled:bg-gray-700 text-white px-12 py-2 rounded-full hover:bg-blue-800 transition-colors duration-500 mt-5 bg-blue-600"
+          class="disabled:bg-gray-700 text-white px-12 py-2 rounded-full hover:bg-yellow-500 transition-colors duration-500 mt-5 bg-yellow-600"
           type="submit"
         >
           <i class="fa-brands fa-cc-visa pr-1"></i>
@@ -50,7 +57,7 @@
         </button>
         <button
           [disabled]="checkOutForm.invalid"
-          class="disabled:bg-gray-700 bg-blue-600 text-white px-12 py-2 rounded-full hover:bg-blue-800 transition-colors duration-500 mt-5"
+          class="disabled:bg-gray-700 bg-yellow-600 text-white px-12 py-2 rounded-full hover:bg-yellow-500 transition-colors duration-500 mt-5"
           type="submit"
           (click)="cash = true"
         >

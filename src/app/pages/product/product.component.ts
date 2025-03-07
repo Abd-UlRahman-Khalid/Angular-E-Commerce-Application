@@ -30,6 +30,8 @@ export class ProductComponent implements OnInit {
 
   products: IProduct[] = [];
   hamada: string = '';
+  sortKey: string = 'price';
+  sortOrder: string = 'asc';
 
   ngOnInit(): void {
     this.getProductsData();
@@ -70,5 +72,31 @@ export class ProductComponent implements OnInit {
         console.log(error);
       },
     });
+  }
+  sortProducts() {
+    console.log('Sorting by:', this.sortKey, 'Order:', this.sortOrder);
+
+    if (!this.sortKey || !this.sortOrder) {
+      console.error('SortKey or SortOrder is missing!');
+      return;
+    }
+
+    this.products = [...this.products].sort((a, b) => {
+      let aValue = a[this.sortKey as keyof IProduct];
+      let bValue = b[this.sortKey as keyof IProduct];
+
+      if (typeof aValue === 'string') {
+        return this.sortOrder === 'asc'
+          ? (aValue as string).localeCompare(bValue as string)
+          : (bValue as string).localeCompare(aValue as string);
+      } else {
+        return this.sortOrder === 'asc' ? +aValue - +bValue : +bValue - +aValue;
+      }
+    });
+  }
+
+  // Fix trackBy function
+  trackById(index: number, item: IProduct): string {
+    return item.id;
   }
 }
